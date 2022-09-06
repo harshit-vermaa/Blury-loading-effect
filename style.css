@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.bg
+{
+    background-image: url('bgimg.jpg');
+    height: calc(100vh + 30px);
+    width: calc(100vw + 30px);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    filter: blur(30px);
+    z-index: -1;
+}
+.loadtext
+{
+  font-size: 60px;
+  color: azure;
+  display: block;
+  z-index: +1;
+}
+.hlwtext
+{
+  opacity: 0;
+  align-items: center;
+  color: rgb(252, 13, 13);
+  font-size: 100px;
+  z-index: -1;
+  position: absolute;
+  margin-left: -28px;
+  margin-top: -15px;
+}

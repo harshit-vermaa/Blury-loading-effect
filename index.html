@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>blury loading</title>
+</head>
+<body>
+    <section class="bg"></section>
+    <div class="loadtext">0%</div>
+    <div class="hlwtext">Hello world</div>
+
+
+    <script>
+        const loadtxt = document.querySelector('.loadtext');
+        const bgm = document.querySelector('.bg'); 
+        const hlw = document.querySelector('.hlwtext'); 
+
+        let load = 0
+        let int = setInterval(bluring,30);
+        function bluring() {
+            load++;
+            if (load>99)
+            {
+                clearInterval(int)
+            }
+            loadtxt.innerText = `${load}%`;
+            loadtxt.style.opacity = scale((load), 0, 100, 1, 0);
+            bgm.style.filter = `blur(${scale((load), 0, 100, 30, 0)}px)`;   
+            hlw.style.opacity = scale((load), 0, 100, 0, 1);         
+        }
+    const scale = (number, inMin, inMax, outMin, outMax) => {
+    return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin
+}
+
+    </script>
+</body>
+</html>
